@@ -1,31 +1,16 @@
-#include "stdio.h"
+#include <stdio.h>
 
-int binary(int n) {
-    int digit = 10;
-    int sum = 0;
-    while (n != 0) {
-        sum += n % 2;
-        sum *= digit;
-        n /= 2;
-    }
-    return sum;
-}
-
-int oneCount(int n) {
-    int count = 0;
-    while(n != 0) {
-        if (n % 10 == 1) {
-            count++;
-        }
-        n /= 10;
-    }
-    return count;
-}
-
-int main() {
+int main(){
     int x;
-    scanf("%d", &x);
-    int bin = binary(x);
-    printf("%d\n", oneCount(bin));
+    scanf("%d",&x);
+    int j, k= 0;
+    while(x>0){
+        j = x % 2;
+        x /= 2;
+        if( j == 1){
+            k++;
+        }
+    }
+    printf("%d", k);
     return 0;
 }
